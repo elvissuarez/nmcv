@@ -40,45 +40,4 @@ class User extends Authenticatable
         'email_verified_at' => 'datetime',
     ];
 
-    // /**
-    //  * Relationship role-user
-    //  */
-    // public function roles()
-    // {
-    //     return $this->belongsToMany('App\Role');
-    // }
-
-    // /**
-    //  * Only access for authorize Role.
-    //  */
-    // public function authorizeRoles($roles)
-    // {
-    //     if ($this->hasAnyRole($roles)) {
-    //         return true;
-    //     }
-    //     abort(401, 'Esta acción no está autorizada.');
-    // }
-
-    // /**
-    //  * Check if user has a role in array
-    //  */
-    // public function hasAnyRoles($roles)
-    // {
-    //     if ($this->roles()->whereIn('name', $roles)->first()) {
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
-    // /**
-    //  * Check if user has a specific role
-    //  */
-    // public function hasRole($role)
-    // {
-    //     if ($this->roles()->where('name', $role)->first()) {
-    //         return true;
-    //     }
-    //     return false;
-    // }
-
 }

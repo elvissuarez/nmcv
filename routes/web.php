@@ -38,5 +38,3 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(
         Route::resource('/proveedores', 'ProviderController')->middleware('can:manage-providers');
     }
 );
-
-

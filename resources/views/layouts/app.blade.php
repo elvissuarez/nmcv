@@ -116,7 +116,7 @@
             </div>
         </nav>
 
-        <main class="py-4 min-vh-100 bg-dark">
+        <main class="py-4 min-vh-100 bg-light">
             <div class = "container">
                 @include('partials.alerts')
                 @yield('content')

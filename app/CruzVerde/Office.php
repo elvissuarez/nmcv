@@ -43,6 +43,14 @@ class Office extends Model {
   }
 
   /**
+   * Relationship offices_crurrent_state-office.
+   */
+  public function office_current_states()
+  {
+    return $this->hasOne('App\CruzVerde\OfficesCrurrentState');
+  }
+
+  /**
    * Set the user's first name.
    *
    * @param string $value

@@ -2,7 +2,7 @@
 
 @section('content')
 <div class="container">
-    <div class="row justify-content-center bg-dark">
+    <div class="row justify-content-center bg-light">
         <div class="col-md-6">
             <div class="card  text-dark">
                 <div class="card-header">{{ __('Inicio') }}</div>
