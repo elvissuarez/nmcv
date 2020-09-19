@@ -75,8 +75,21 @@
                       <td> {{ $sucursal->oname }}</td>
                       <td>{{ $sucursal->oip }} </td>
                       <td>{{ implode(', ', $sucursal->Providers()->get()->pluck('pname')->toArray()) }} </td>
-                        <td class="text-center">
-                          <i class="fas fa-fw fa-circle text-green"></i>
+                      <td class="text-center">
+                        @if (is_null($sucursal->OfficeState()))
+                          <i class="fas fa-fw fa-circle text-gray"></i>
+                        @else
+                          @switch($sucursal->OfficeState())
+                            @case('ACTIVE')
+                              <i class="fas fa-fw fa-circle text-green"></i>
+                              @break
+                            @case('INACTIVO')
+                              <i class="fas fa-fw fa-circle text-yellow"></i>
+                              @break
+                            @default
+                              <i class="fas fa-fw fa-circle text-red"></i>
+                          @endswitch
+                        @endif
                       </td>
                     </tr>
                   @endforeach

@@ -19,7 +19,7 @@ class OfficesCrurrentState extends Model
    * @var array
    */
   protected $fillable = [
-    'cstate', 'csip', 'csoffice', 'csactive', 'updated_at'
+    'cstate', 'csip', 'office_ocode', 'csactive', 'updated_at'
   ];
 
   /**

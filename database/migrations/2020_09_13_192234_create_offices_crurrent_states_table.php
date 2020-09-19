@@ -17,11 +17,11 @@ class CreateOfficesCrurrentStatesTable extends Migration
             $table->bigIncrements('id');
             $table->string('cstate', 200);
             $table->string('csip', 50);
-            $table->unsignedBigInteger('csoffice');
+            $table->unsignedBigInteger('office_ocode');
             $table->boolean('csactive')->default(true);
             $table->timestamps();
             // foreign Key
-            $table->foreign('csoffice')
+            $table->foreign('office_ocode')
                 ->references('ocode')
                 ->on('offices')
                 ->onDelete('cascade');
