@@ -2,7 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Controllers\LinkController;
 use Illuminate\Http\Request;
+use App\CruzVerde\Office;
+use App\CruzVerde\Provider;
 
 class HomeController extends Controller
 {
@@ -23,6 +26,13 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        // $lc = new LinkController();
+        // dump($lc->healthCheck("192.168.1.90"));
+        $sucursales = Office::all();
+        $proveedores = Provider::all();
+        return view('home')->with([
+            'sucursales' => $sucursales,
+            'proveedores' => $proveedores,
+        ]);
     }
 }

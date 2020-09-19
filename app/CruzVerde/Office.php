@@ -4,7 +4,8 @@ namespace App\CruzVerde;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Office extends Model {
+class Office extends Model
+{
   /**
    * The primary key associated with the table.
    *
@@ -40,6 +41,14 @@ class Office extends Model {
   public function providers()
   {
     return $this->belongsToMany('App\CruzVerde\Provider');
+  }
+
+  /**
+   * Relationship offices_crurrent_state-office.
+   */
+  public function office_current_states()
+  {
+    return $this->hasOne('App\CruzVerde\OfficesCrurrentState');
   }
 
   /**
@@ -113,7 +122,7 @@ class Office extends Model {
   }
 
   /**
-   * Check if user has a specific role
+   * Check if Office has a specific role
    */
   public function hasProvider($provider)
   {
@@ -123,4 +132,15 @@ class Office extends Model {
     return FALSE;
   }
 
+    /**
+     * Check if Office has a specific State
+     */
+    public function OfficeState()
+    {
+        $resp = $this->office_current_states()->where('office_ocode', $this->ocode)->first();
+        if (isset($resp)) {
+            return $resp->cstate;
+        }
+        return null;
+    }
 }
